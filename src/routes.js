@@ -72,4 +72,18 @@ export const routes = [
       return response.writeHead(204).end();
     },
   },
+
+  {
+    method: "PATCH",
+    path: buildRoutePath("/tasks/:id/complete"),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      database.update("tasks", id, {
+        completed_at: new Date(),
+      });
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
