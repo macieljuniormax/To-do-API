@@ -1,0 +1,14 @@
+{
+  "name": "to-do-api",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Este projeto é uma API para realizar um CRUD de tarefas (To-Do).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
