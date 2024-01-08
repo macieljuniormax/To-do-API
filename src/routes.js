@@ -64,6 +64,14 @@ export const routes = [
       const { id } = request.params;
       const { title, description } = request.body;
 
+      if (!title && !description) {
+        return response
+          .writeHead(400)
+          .end(
+            JSON.stringify({ message: "Title or description are required" })
+          );
+      }
+
       database.update("tasks", id, {
         title: title,
         description: description,
