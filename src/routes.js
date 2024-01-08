@@ -105,6 +105,12 @@ export const routes = [
     handler: (request, response) => {
       const { id } = request.params;
 
+      const [task] = database.select("tasks", { id });
+
+      if (!task) {
+        return res.writeHead(404).end();
+      }
+
       database.update("tasks", id, {
         completed_at: new Date(),
       });
